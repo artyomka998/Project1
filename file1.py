@@ -1,7 +1,7 @@
 print("Введите количество клиентов")
 a=int(input())
 
-class work
+class work:
 	def __init__(okna,vremya,raboti,tovari)
 		self.rb=raboti
 		self.ok=okna
