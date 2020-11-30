@@ -1,5 +1,8 @@
 import csv
+import sqlite3
 
+conn=sqlite3.connect("basadannih.db")
+cursor=conn.cursor()
 
 class work:
     def __init__(self, okna, vremya, raboti, tovari):
