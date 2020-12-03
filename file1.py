@@ -60,12 +60,24 @@ class work:
             writer = csv.writer(file, delimiter=';')
             for row in self.data_csv_list:
                 writer.writerow(row)
-cursor.execute("""CREATE TABLE Predpriyatie (name text, okna integer, vremya integer, raboti integer, tovari integer) """)
-Predpriyatie = [('Pered Avtomatization', '8','5','60','81'),('Posle Avtmzn','12','8','97','169')]
-cursor.executemany("INSERT INTO Predpriyatie VALUES (?,?,?,?,?)", Predpriyatie)
+# cursor.execute("""CREATE TABLE Predpriyatie (name text, okna integer, vremya integer, raboti integer, tovari integer) """)
+# Predpriyatie = [('Pered Avtomatization', '8','5','60','81'),('Posle Avtmzn','12','8','97','169')]
+# cursor.executemany("INSERT INTO Predpriyatie VALUES (?,?,?,?,?)", Predpriyatie)
+
+sqlupdate="""
+UPDATE Predpriyatie
+SET okna = '10', vremya = '6', raboti = '89', tovari = '149' 
+WHERE name = 'Posle Avtmzn'
+"""
+cursor.execute(sqlupdate)
+conn.commit()
+
 sql = "SELECT * FROM Predpriyatie"
 cursor.execute(sql)
+conn.commit()
 print(cursor.fetchall())
+
+
 
 
 a1 = work(8, 5, 60, 81)
