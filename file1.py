@@ -60,7 +60,7 @@ class work:
             writer = csv.writer(file, delimiter=';')
             for row in self.data_csv_list:
                 writer.writerow(row)
-# cursor.execute("""CREATE TABLE Predpriyatie (name text, okna integer, vremya integer, raboti integer, tovari integer) """)
+cursor.execute("""CREATE TABLE Predpriyatie (name text, okna integer, vremya integer, raboti integer, tovari integer, virab integer) """)
 # Predpriyatie = [('Pered Avtomatization', '8','5','60','81'),('Posle Avtmzn','12','8','97','169')]
 # cursor.executemany("INSERT INTO Predpriyatie VALUES (?,?,?,?,?)", Predpriyatie)
 
@@ -72,17 +72,17 @@ class work:
 # cursor.execute(sqlupdate)
 # conn.commit()
 
-sqldelete="""
-DELETE FROM Predpriyatie
-WHERE name = 'Posle Avtmzn'
-"""
-cursor.execute(sqldelete)
-conn.commit()
+# sqldelete="""
+# DELETE FROM Predpriyatie
+# WHERE name = 'Posle Avtmzn'
+# """
+# cursor.execute(sqldelete)
+# conn.commit()
 
-sql = "SELECT * FROM Predpriyatie"
-cursor.execute(sql)
-conn.commit()
-print(cursor.fetchall())
+# sql = "SELECT * FROM Predpriyatie"
+# cursor.execute(sql)
+# conn.commit()
+# print(cursor.fetchall())
 
 
 
