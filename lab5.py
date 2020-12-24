@@ -49,7 +49,7 @@ class window_design(QtWidgets.QMainWindow, design.Ui_Dialog):
         self.table.resizeColumnsToContents()        
 
 
-    def virab(self, rb, vr):
+    def virab(self, rb, vr):    
         return rb // vr
 
     def add(self):
